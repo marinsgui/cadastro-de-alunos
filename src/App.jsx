@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import image from './assets/virtual-reality-animate.svg'
 
 function App() {
 
@@ -8,13 +9,18 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    console.log(email, password)
+    localStorage.setItem('email', email)
+    localStorage.setItem('password', password)
   }
   
 
   return (
     <div className="App">
-      <form onSubmit={handleSubmit}>
+      <div className='image'>
+        <img src={image} alt="Girl with VR" />
+      </div>
+      <form onSubmit={handleSubmit} className='form'>
+        <h1>Faça seu cadastro</h1>
         <label>
           Email: 
           <input 
